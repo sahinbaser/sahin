@@ -1,0 +1,63 @@
+<div itemscope="" itemtype="http://schema.org/Event">
+                                 <span itemprop="name"> Antalya Seo Hizmeti</span>
+                                 <a itemprop="url" href="/">
+    Antalya Seo 
+    </a>
+                              <span itemprop="description">Antalya'da Seo Alanın Kaliteli Hizmet ve Güvenin Tek Adresi. Kurumasal Google Reklamları Kurumsal Youtube Reklamları.</span>
+                                 <meta itemprop="startDate" content="2016-10-21T20:00">
+    Thu, 04/21/16
+    8:00 p.m.
+  <div itemprop="location" itemscope="" itemtype="http://schema.org/Place">
+  <span itemprop="name"> Antalya Seo Hizmeti</span>
+  
+    <a itemprop="url" href="/">
+    Antalya Seo 
+    </a>
+    <div itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress">
+      <span itemprop="addressLocality">Antalya</span>,
+      <span itemprop="addressRegion">Antalya</span>
+                                <span itemprop="description">Antalya'da Seo Alanın Kaliteli Hizmet ve Güvenin Tek Adresi. Kurumasal Google Reklamları Kurumsal Youtube Reklamları.</span>
+								
+								<div itemscope="" itemtype="http://schema.org/Offer">
+                                <span itemprop="name">Antalya Seo</span>                        
+                                <link itemprop="availability" href="http://www.antalyaseohizmeti.com/">'da 1. Sayfa
+								</div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6 wow fadeInLeft animated" style="visibility: visible; animation-name: fadeInLeft;">
+                    <h3 class="column-title">Google Nasıl Çalışır</h3>
+                    <!-- 16:9 aspect ratio -->
+                    <div class="embed-responsive embed-responsive-16by9">
+                        
+                    </div>
+                </div>
+
+                <div class="col-sm-6 wow fadeInRight animated" style="visibility: visible; animation-name: fadeInRight;">
+                    <h3 class="column-title">Seo Çalışmları</h3>
+                    <p>Bildiğiniz gibi seo alanında en büyük kaynağımız Google Ceo'su Matt Cutts. İlk sayfa sıralamasının nasıl olması gerektiğini bu vidyoda kendisinden dinleyelim.</p>
+
+                    <p>Google'a göre sıralamada bir çok etken var ve hepsi sitenizi bir adım ileriye taşıyor. Açıkalama ve site içeriği konusu çok büyük bir önem kazanmış durumda.</p>
+
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <ul class="nostyle">
+                                <li><i class="fa fa-check-square"></i> Açıklama(Desciription)</li>
+                                <li><i class="fa fa-check-square"></i> Zengin (Özgün) İçerik</li>
+                            </ul>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <ul class="nostyle">
+                                <li><i class="fa fa-check-square"></i> Google Dizinine Eklenmiş Sİteler</li>
+                                <li><i class="fa fa-check-square"></i> Kullanımı Kolay Mobil Siteler</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <a class="btn btn-primary" href="#">Teklif Alın</a>
+
+                </div>
+            </div>
+        </div>
+    </div>
