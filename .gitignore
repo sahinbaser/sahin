@@ -1,0 +1,5 @@
+finpro/backend/venv/
+finpro/frontend/node_modules/
+finpro/frontend/.expo/
+__pycache__/
+.env
