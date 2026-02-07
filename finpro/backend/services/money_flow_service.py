@@ -9,15 +9,22 @@ class MoneyFlowService:
         to determine where the money is flowing.
         """
         sectors = {
-            "Technology": "XLK",
-            "Financials": "XLF",
-            "Healthcare": "XLV",
-            "Energy": "XLE",
-            "Consumer Staples": "XLP",
-            "Industrials": "XLI",
-            "Utilities": "XLU",
-            "BIST 100": "XU100.IS",
-            "DAX (EU)": "^GDAXI"
+            "Technology (US)": "XLK",
+            "Financials (US)": "XLF",
+            "Healthcare (US)": "XLV",
+            "Energy (US)": "XLE",
+            "Consumer Staples (US)": "XLP",
+            "Industrials (US)": "XLI",
+            "Utilities (US)": "XLU",
+            "Real Estate (US)": "XLRE",
+            "BIST 100 (TR)": "XU100.IS",
+            "BIST Bank (TR)": "XBANK.IS",
+            "BIST Industrial (TR)": "XUSIN.IS",
+            "DAX (DE)": "^GDAXI",
+            "FTSE 100 (UK)": "^FTSE",
+            "CAC 40 (FR)": "^FCHI",
+            "Bitcoin (Crypto)": "BTC-USD",
+            "Ethereum (Crypto)": "ETH-USD"
         }
 
         results = []

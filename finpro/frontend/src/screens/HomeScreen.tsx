@@ -16,9 +16,11 @@ export default function HomeScreen({ navigation }: any) {
 
   return (
     <ScrollView style={styles.container}>
-      <Button mode="contained" buttonColor="#FFD700" textColor="#000" style={{ margin: 20 }} onPress={() => alert('Premium Planlar Yakında!')}>
-        PREMIUM'A GEÇ
-      </Button>
+      <View style={{ padding: 10 }}>
+        <Button mode="contained" buttonColor="#FFD700" textColor="#000" style={{ marginBottom: 10 }} onPress={() => alert('Premium Planlar Yakında!')}>
+          PRO ÜYELİĞE GEÇ (%50 İNDİRİM)
+        </Button>
+      </View>
       <View style={styles.header}>
         <Title style={styles.title}>FinPro Professional</Title>
         <Paragraph style={styles.subtitle}>{t('welcome')}</Paragraph>

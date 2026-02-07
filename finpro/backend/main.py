@@ -7,10 +7,16 @@ from services.trading_service import TradingService
 from services.money_flow_service import MoneyFlowService
 from services.risk_service import RiskService
 from services.membership_service import MembershipService
+from services.portfolio_service import PortfolioService
 from pydantic import BaseModel
 from typing import List, Optional
 
 app = FastAPI(title="FinPro API")
+
+class PortfolioItem(BaseModel):
+    user_id: str
+    ticker: str
+    notes: Optional[str] = ""
 
 class DividendSimRequest(BaseModel):
     initial_capital: float
@@ -117,6 +123,18 @@ async def get_risk_analysis(ticker: str):
 @app.get("/api/membership/plans")
 async def get_plans():
     return MembershipService.get_plans()
+
+@app.get("/api/portfolio/{user_id}")
+async def get_portfolio(user_id: str):
+    return PortfolioService.get_user_portfolio(user_id)
+
+@app.post("/api/portfolio")
+async def add_portfolio(item: PortfolioItem):
+    return PortfolioService.add_to_portfolio(item.user_id, item.ticker, item.notes)
+
+@app.delete("/api/portfolio/{user_id}/{portfolio_id}")
+async def delete_portfolio(user_id: str, portfolio_id: int):
+    return PortfolioService.remove_from_portfolio(user_id, portfolio_id)
 
 if __name__ == "__main__":
     import uvicorn

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { View, StyleSheet, ScrollView } from 'react-native';
 import { Title, Text, Card, TextInput, Button, ActivityIndicator } from 'react-native-paper';
 import axios from 'axios';
+import PriceChart from '../components/PriceChart';
 
 const API_URL = 'http://localhost:8000';
 
@@ -9,12 +10,18 @@ export default function TradingScreen() {
   const [ticker, setTicker] = useState('');
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<any>(null);
+  const [chartData, setChartData] = useState<any>(null);
 
   const getSignals = async () => {
     setLoading(true);
     try {
       const response = await axios.get(`${API_URL}/api/analysis/trading-signals/${ticker}`);
       setResult(response.data);
+
+      const priceResponse = await axios.get(`${API_URL}/api/stock/${ticker}`);
+      const prices = priceResponse.data.map((d: any) => d.Close);
+      const dates = priceResponse.data.map((d: any) => d.Date);
+      setChartData({ prices, dates });
     } catch (error) {
       alert('Hata: Hisse bulunamadı');
     }
@@ -28,6 +35,15 @@ export default function TradingScreen() {
       <Button mode="contained" onPress={getSignals} style={styles.button}>Sinyal Üret</Button>
 
       {loading && <ActivityIndicator animating={true} color="#fff" />}
+
+      {chartData && (
+        <Card style={styles.card}>
+          <Card.Content>
+            <Title style={{ color: '#fff' }}>Trend Analizi</Title>
+            <PriceChart data={chartData.prices} labels={chartData.dates} />
+          </Card.Content>
+        </Card>
+      )}
 
       {result && (
         <Card style={styles.card}>

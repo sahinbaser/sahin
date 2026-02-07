@@ -8,6 +8,7 @@ const API_URL = 'http://localhost:8000';
 export default function DividendScreen() {
   const [initial, setInitial] = useState('10000');
   const [monthly, setMonthly] = useState('1000');
+  const [currency, setCurrency] = useState('USD');
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<any>(null);
 
@@ -33,8 +34,22 @@ export default function DividendScreen() {
   return (
     <ScrollView style={styles.container}>
       <Title style={{ color: '#fff', marginBottom: 20 }}>Finansal Özgürlük Planlayıcı</Title>
-      <TextInput label="Başlangıç Sermayesi" value={initial} onChangeText={setInitial} style={styles.input} mode="outlined" keyboardType="numeric" />
-      <TextInput label="Aylık Katkı" value={monthly} onChangeText={setMonthly} style={styles.input} mode="outlined" keyboardType="numeric" />
+      <View style={{ flexDirection: 'row', marginBottom: 15 }}>
+        {['USD', 'EUR', 'TRY'].map(curr => (
+          <Button
+            key={curr}
+            mode={currency === curr ? 'contained' : 'outlined'}
+            onPress={() => setCurrency(curr)}
+            style={{ flex: 1, marginHorizontal: 2 }}
+            buttonColor={currency === curr ? '#FFD700' : undefined}
+            textColor={currency === curr ? '#000' : '#fff'}
+          >
+            {curr}
+          </Button>
+        ))}
+      </View>
+      <TextInput label={`Başlangıç Sermayesi (${currency})`} value={initial} onChangeText={setInitial} style={styles.input} mode="outlined" keyboardType="numeric" />
+      <TextInput label={`Aylık Katkı (${currency})`} value={monthly} onChangeText={setMonthly} style={styles.input} mode="outlined" keyboardType="numeric" />
       <Button mode="contained" onPress={simulate} style={styles.button}>Simüle Et</Button>
 
       {loading && <ActivityIndicator animating={true} color="#fff" />}
@@ -43,7 +58,7 @@ export default function DividendScreen() {
         <Card style={styles.card}>
           <Card.Content>
             <Title style={{ color: '#fff' }}>Özgürlük Yılı: {result.independence_year || 'Belirlenemedi'}</Title>
-            <Text style={{ color: '#aaa' }}>Final Portföy: {result.final_portfolio_value}</Text>
+            <Text style={{ color: '#aaa' }}>Final Portföy: {result.final_portfolio_value} {currency}</Text>
           </Card.Content>
         </Card>
       )}
